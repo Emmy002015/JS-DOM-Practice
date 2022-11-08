@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./style.css" rel="stylesheet" type="text/css" />
+        <script src="./testingJs.js"></script>
+    </head>
+    <body> 
+        <div class="container">
+            <div class="header">HEADER</div>
+            <div class="hero">HERO</div>
+            <div class="sub-container">
+                <div class="content" >CONTENT</div>
+                <div class="sidebar" >SIDEBAR</div>
+            </div>
+            <div class="footer">FOOTER</div>
+        </div>
+        <script>
+            let headerClass = document.getElementsByClassName("header")
+            headerClass[0].innerHTML = 'head';
+            // console.log(headerClass[0].innerHTML)
+            headerClass[0].style.backgroundColor = "orange";
+            // console.log(headerClass)
+
+            let container = document.querySelector('.container > .footer')
+            console.log(container.innerHTML)
+
+            let hero = document.querySelector('.hero')
+            console.log(hero.innerHTML)
+            hero.innerHTML = 'HEROS OF MY LAND'
+        </script>
+    </body>
+</html>

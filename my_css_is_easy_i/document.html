@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="./document.js"></script> -->
+    <title>Document</title>
+</head>
+<body id="magicBody">
+    <button onclick="magic()">Magic Button</button>
+    <div id="hero" class="wrapper">
+        <div class="company"><h1 id="headerText">emjoe acamdey</h1></div>
+        <button id="company-btn" onclick="changeColor()">Change Colour</button> <br> <br>
+        <input type="text" id="changeText" placeholder="enter text"> <br>
+        <button onclick="changeText()">change Header Text</button>
+        <div class="main">
+            <section class="right"><p id="right">This is the right section of the page</p></section>
+            <input type="text" id="changeBtn" placeholder="enter your message" onchange="modifyText()">
+            <section class="center">
+                <p>This is for the list of available rich fruits</p>
+                <ul id="fruitList" class="fruit-list">
+                    <li>Mango</li>
+                    <li>Apple</li>
+                    <li>Orange</li>
+                    <li>Banana</li>
+                    <li>Cucumber</li>
+                </ul>
+            </section>
+            <section class="left"><p>Welcome to the year <span class="year"></span></p></section>
+        </div>
+        <footer class="footer"><p>&copy; <span id="year"></span>: All Rights Reserved </p></footer>
+    </div>
+    <script>
+        let wrapperElement = document.getElementById('hero')
+        console.log(wrapperElement)
+
+        // let companyElement = document.getElementsByClassName('company')
+        // console.log(companyElement[0].innerHTML)
+        // companyElement[0].innerHTML = 'EMJOE LEARNING CENTER'
+        // console.log(companyElement[0].innerHTML)
+        // companyElement[0].style.fontSize = '20px'
+        // companyElement[0].style.backgroundColor = 'orange'
+        // companyElement[0].style.textAlign = 'center'
+
+        let ulItems = document.getElementById('fruitList');
+        let liItems = ulItems.getElementsByTagName('li');
+        console.log(liItems[2].innerHTML)
+        liItems[2].innerHTML = 'Carrot'
+        for (let i = 0; i < liItems.length; i++){
+            // console.log(li[i].innerHTML)
+        }
+        let year = document.getElementsByClassName('year')
+        year[0].innerHTML = new Date().getFullYear()
+        year[0].style.fontWeight = 'bold'
+
+        copyRightYear = document.querySelector('.footer > p > #year');
+        copyRightYear.innerHTML = new Date().getFullYear()
+        
+
+        // let fruitElemenet = document.querySelector('.fruit-list > li')
+        // console.log(fruitElemenet.innerHTML)
+
+        // for (i = 0; i < fruitElemenet.length; i++){
+        //     console.log(fruitElemenet[i])
+        // }
+
+        function changeColor() {
+            let hC = document.getElementById('headerText');
+            if(hC.style.backgroundColor !== 'pink'){
+                hC.style.backgroundColor = 'pink'
+            }else{
+                hC.style.backgroundColor = 'white'
+            }
+                
+        }
+
+        function changeText() {
+            let hC = document.getElementById('headerText');
+            let cT = document.getElementById('changeText');
+            hC.innerText = cT.value;
+            hC.style.fontSize = '40px'
+            cT.value = ""
+        }
+
+        function modifyText() {
+            changeT = document.getElementById('right')
+            changeB = document.getElementById('changeBtn')
+            changeT.innerText = changeB.value;
+            changeB.value = ""
+        }
+
+        function magic() {
+            // alert('hello')
+            let magicB = document.getElementById('magicBody')
+            if(magicB.style.backgroundColor !== 'skyblue'){
+                magicB.style.backgroundColor = 'skyblue'
+            }else{
+                magicB.style.backgroundColor = '#ffffff'
+            }
+
+        }
+
+    </script>
+</body>
+</html>
